@@ -90,6 +90,7 @@
     .blog-post h2 {
       font-size: 1.8rem; /* Adjusted size for blog post title */
       margin: 0;
+      font-weight: bold; /* Bolded header */
     }
 
     .blog-post p {
@@ -103,6 +104,19 @@
       background-color: #333; /* Placeholder color */
       margin: 20px 0; /* Pocket between text */
       border-radius: 8px;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      height: 200px; /* Placeholder height for image */
+      background-color: #444; /* Placeholder color */
+      margin: 20px 0; /* Margin above and below the image */
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      color: #fff;
     }
 
     /* Media Queries */
@@ -145,15 +159,16 @@
   
   <div class="blog-post">
     <h2 id="postTitle">Blog Post Title 1</h2>
+    <div class="image-placeholder">Image Placeholder</div> <!-- Image spot -->
     <p id="postDescription">Default description text for the blog post. This can be replaced with URL parameters.</p>
     
     <div class="ad-space"></div> <!-- Ad space -->
     
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum massa non venenatis luctus. Phasellus imperdiet risus et nunc posuere, at vehicula ligula placerat. Cras vitae arcu fringilla, facilisis mi id, efficitur libero. Vivamus nec tincidunt dolor. Ut quis nibh eget odio ultrices bibendum.</p>
 
-    <div class="ad-space"></div> <!-- Ad space -->
-
     <p>Cras sed vestibulum libero. Sed dignissim felis vel velit ullamcorper, at iaculis justo consequat. Suspendisse potenti. Aenean sit amet nunc ut dui suscipit feugiat. Duis posuere orci nec libero tristique, ut dignissim est consectetur.</p>
+
+    <div class="ad-space"></div> <!-- Ad space -->
 
     <p>Etiam nec urna justo. Proin suscipit turpis a diam accumsan, nec finibus elit hendrerit. Vivamus blandit metus ut orci tristique. Maecenas ut felis vitae libero pharetra volutpat non ut risus. Ut sagittis massa a dapibus vulputate.</p>
     
