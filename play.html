@@ -10,21 +10,13 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
   <script async src="https://ss.mrmnd.com/banner.js"></script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8X677NPBRV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-8X677NPBRV');
-  </script>
-
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
       background-color: #121212;
+      color: #fff;
       overflow: hidden;
     }
 
@@ -96,58 +88,30 @@
       left: 10px; /* Move to left */
     }
 
-    #iframe-container {
-      position: absolute;
-      top: 120px; /* Align with description */
-      left: 10px; /* Left aligned */
-      right: 40%; /* Leave space for ads */
-      bottom: 150px;
-      display: flex;
-      justify-content: flex-start;
-    }
-
-    iframe {
-      width: 100%;
-      height: calc(80vh - 70px);
-      border: none;
-      position: relative;
-      padding: 0px;
-      box-sizing: border-box;
-    }
-
-    .button-container {
-      position: absolute;
-      top: calc(200px + 80px); /* Position buttons below description */
-      left: 10px;
-      display: flex;
-      gap: 10px;
-    }
-
-    button {
-      display: flex;
-      align-items: center;
-      font-size: 18px;
+    .blog-post {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      margin: 20px 10px;
       border-radius: 8px;
-      cursor: pointer;
-      padding: 5px 10px;
-      border: none;
-      background-color: #ffd700;
-      transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+      width: 40%; /* Adjust width */
+      position: relative;
+      left: 10px; /* Align with description */
     }
 
-    button img {
-      width: 24px;
-      height: auto;
+    .blog-post h2 {
+      font-size: 1.5rem;
+      margin: 0;
     }
 
-    button:active {
-      background-color: #ff6347;
-      transform: scale(0.95);
+    .blog-post p {
+      font-size: 1rem;
+      margin: 10px 0;
     }
 
     .ad-container {
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
+      align-items: center;
       position: absolute;
       top: 120px; /* Start below title */
       right: 10px; /* Right side for ads */
@@ -165,12 +129,8 @@
         font-size: 1.5rem;
       }
 
-      #description {
+      #description, .blog-post {
         width: 80%;
-      }
-
-      #iframe-container {
-        right: 20%; /* Adjust for smaller screens */
       }
 
       .ad-container {
@@ -183,12 +143,8 @@
         font-size: 1.2rem;
       }
 
-      #description {
+      #description, .blog-post {
         width: 90%;
-      }
-
-      #iframe-container {
-        right: 10%;
       }
 
       .ad-container {
@@ -211,27 +167,22 @@
     </div>
   </nav>
 
-  <h1 id="gameTitle">GAMENAMEHERE</h1>
+  <h1>Welcome to DuckHTML Blog</h1>
   
-  <div id="description">Game description will be displayed here.</div>
+  <div id="description">Here you can find the latest updates, reviews, and articles about your favorite games!</div>
 
-  <div id="iframe-container"></div>
-
-  <div class="ad-container">
-    <!-- Placeholder for Ads -->
-    <p>Ads will be displayed here.</p>
+  <div class="blog-post">
+    <h2>Blog Post Title 1</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum massa non venenatis luctus. Phasellus imperdiet risus et nunc posuere, at vehicula ligula placerat. Cras sed vestibulum libero. Sed dignissim felis vel velit ullamcorper, at iaculis justo consequat.</p>
   </div>
 
-  <div class="button-container">
-    <button class="playNowButton" onclick="toggleFullscreen()">
-      <img src="https://cdn0.iconfinder.com/data/icons/audio-and-video-outline-1/24/audio_-31-512.png" alt="Fullscreen Icon">
-    </button>
-    <button class="refreshButton" onclick="refreshIframe()">
-      <img src="https://static.thenounproject.com/png/1810370-200.png" alt="Refresh Icon">
-    </button>
-    <button class="openBlankButton" onclick="openInBlank()">
-      <img src="https://static.thenounproject.com/png/1483687-200.png" alt="Open Blank Icon">
-    </button>
+  <div class="blog-post">
+    <h2>Blog Post Title 2</h2>
+    <p>Suspendisse potenti. Etiam nec urna justo. Proin suscipit turpis a diam accumsan, nec finibus elit hendrerit. Vivamus blandit metus ut orci tristique, a pellentesque risus facilisis. Integer nec urna eget ex tincidunt elementum ac ut quam.</p>
+  </div>
+
+  <div class="ad-container">
+    <p>Ad space</p>
   </div>
 
   <script>
