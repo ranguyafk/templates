@@ -93,7 +93,7 @@
       padding: 15px;
       margin: 20px 10px;
       border-radius: 8px;
-      width: 40%; /* Adjust width */
+      width: calc(100% - 40px); /* Expand to reach the end */
       position: relative;
       left: 10px; /* Align with description */
     }
@@ -173,17 +173,10 @@
 
   <div class="blog-post">
     <h2>Blog Post Title 1</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum massa non venenatis luctus. Phasellus imperdiet risus et nunc posuere, at vehicula ligula placerat. Cras sed vestibulum libero. Sed dignissim felis vel velit ullamcorper, at iaculis justo consequat.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum massa non venenatis luctus. Phasellus imperdiet risus et nunc posuere, at vehicula ligula placerat. Cras sed vestibulum libero. Sed dignissim felis vel velit ullamcorper, at iaculis justo consequat. Suspendisse potenti. Etiam nec urna justo. Proin suscipit turpis a diam accumsan, nec finibus elit hendrerit. Vivamus blandit metus ut orci tristique, a pellentesque risus facilisis. Integer nec urna eget ex tincidunt elementum ac ut quam.</p>
   </div>
 
-  <div class="blog-post">
-    <h2>Blog Post Title 2</h2>
-    <p>Suspendisse potenti. Etiam nec urna justo. Proin suscipit turpis a diam accumsan, nec finibus elit hendrerit. Vivamus blandit metus ut orci tristique, a pellentesque risus facilisis. Integer nec urna eget ex tincidunt elementum ac ut quam.</p>
-  </div>
-
-  <div class="ad-container">
-    <p>Ad space</p>
-  </div>
+  <div class="ad-container"></div>
 
   <script>
     function checkQueryParam(param) {
