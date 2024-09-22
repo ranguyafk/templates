@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="DuckHTML Unblocked Games, Free to play">
-  <title>DuckHTML</title>
+  <title>DuckHTML - Blog</title>
   <link rel="icon" type="image/x-icon" href="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
@@ -25,14 +25,14 @@
       padding: 0;
       font-family: Arial, sans-serif;
       background-color: #121212;
-      overflow: hidden; /* Remove scrollbars */
+      overflow: hidden;
     }
 
     nav {
       width: 100%;
       position: fixed;
       top: 0;
-      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+      background-color: rgba(0, 0, 0, 0.5);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -75,42 +75,54 @@
     }
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       color: #fff;
-      position: absolute;
-      top: 80px; /* Space for the fixed nav */
-      right: 50px; /* Move title to the right */
+      text-align: center;
+      margin-top: 80px; /* Space for the fixed nav */
       font-family: 'Press Start 2P', sans-serif;
+    }
+
+    #description {
+      font-size: 1rem;
+      color: #fff;
+      text-align: left;
+      margin: 20px 10px; /* Left-aligned */
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 8px;
+      width: 40%; /* Adjust width */
+      position: absolute;
+      top: 120px; /* Space from top */
+      left: 10px; /* Move to left */
     }
 
     #iframe-container {
       position: absolute;
-      top: 85px; /* Adjust this value as needed */
-      left: 10px; /* Move the iframe to the left */
-      right: 10px; /* Ensure it does not stretch too wide */
-      bottom: 150px; /* Leave space for buttons */
+      top: 120px; /* Align with description */
+      left: 10px; /* Left aligned */
+      right: 40%; /* Leave space for ads */
+      bottom: 150px;
       display: flex;
-      justify-content: flex-start; /* Align iframe to the left */
+      justify-content: flex-start;
     }
 
     iframe {
-      width: 70vw;
+      width: 100%;
       height: calc(80vh - 70px);
       border: none;
-      position: relative; /* Relative positioning within container */
+      position: relative;
       padding: 0px;
-      box-sizing: border-box; /* Ensure padding and border are included in width/height */
+      box-sizing: border-box;
     }
 
     .button-container {
       position: absolute;
-      top: calc(120px + 80px); /* Position buttons directly below the title */
-      right: 50px; /* Align buttons to the right */
-      display: flex; /* Align buttons horizontally */
-      gap: 10px; /* Space between buttons */
+      top: calc(200px + 80px); /* Position buttons below description */
+      left: 10px;
+      display: flex;
+      gap: 10px;
     }
 
-    /* Individual button styling */
     button {
       display: flex;
       align-items: center;
@@ -119,232 +131,71 @@
       cursor: pointer;
       padding: 5px 10px;
       border: none;
-      background-color: #ffd700; /* Consistent color for all buttons */
+      background-color: #ffd700;
       transition: background-color 0.3s ease-in-out, transform 0.2s ease;
     }
 
     button img {
-      width: 24px; /* Icon size */
+      width: 24px;
       height: auto;
     }
 
     button:active {
-      background-color: #ff6347; /* Darker color on click */
-      transform: scale(0.95); /* Slightly shrink the button on click */
+      background-color: #ff6347;
+      transform: scale(0.95);
     }
 
-    .rounded-image {
-      position: fixed;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 20px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .rounded-imagetext {
-      position: fixed;
-      bottom: 5px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 20px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .discord-btn {
-      text-decoration: none;
-      cursor: pointer;
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      border: none;
-      background-color: #454545;
-      border-radius: 5px;
-    }
-
-    .discord-btn img {
-      width: 20px;
-      height: auto;
-      margin-right: 5px;
-    }
-
-.ad-container {
-  display: flex;
-  justify-content: flex-end;
-  position: fixed;
-  bottom: 10px; /* Adjust this value as needed */
-  right: 10px; /* Adjust this value as needed */
-  border: 5px solid white;
-  z-index: 1000; /* Ensure it’s above other elements */
-}
-
-
-    .nav-btn2 {
-      text-decoration: none;
-      color: #fff;
-      cursor: pointer;
-      display: inline-block;
-      padding: 1rem 2rem;
-      border: none;
+    .ad-container {
+      display: flex;
+      justify-content: flex-start;
       position: absolute;
-      bottom: 60%;
-      left: 86%;
-      font-family: Tahoma;
-      background-color: #454545;
-      border-radius: 5px;
-    }
-
-    .content-container {
-      text-align: center;
-      margin-top: 20px;
-      border-radius: 5px;
-    }
-
-    #cookieNotice {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      width: 150px;
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 10px;
+      top: 120px; /* Start below title */
+      right: 10px; /* Right side for ads */
+      width: 30%; /* Adjust width for ads */
+      height: auto;
+      background-color: rgba(255, 255, 255, 0.1);
       border-radius: 8px;
-      display: none;
-    }
-
-    #cookieNotice button {
-      background-color: #ffd700;
-      color: #363636;
-      border: none;
-      padding: 8px 16px;
-      margin: 5px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    /* General button styles */
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      color: white;
-      background-color: #ffd700; /* Consistent color for all buttons */
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      outline: none;
-      transition: all 0.3s ease; /* Smooth transition for hover effects */
-    }
-
-    /* Hover effect for buttons */
-    button:hover {
-      background-color: #f0c000; /* Darker yellow for hover */
-      transform: scale(1.05); /* Slightly enlarge the button */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
-    }
-
-    /* Specific button styles */
-    .bookmark-button {
-      background-color: #ffd700; /* Yellow color for bookmark button */
-    }
-
-    .bookmark-button:hover {
-      background-color: #f0c000; /* Darker yellow for hover */
-    }
-
-    /* Play Now Button */
-    .playNowButton {
-      background-color: #ffd700; /* Yellow color for Play Now button */
-    }
-
-    .playNowButton:hover {
-      background-color: #f0c000; /* Darker yellow for hover */
-    }
-
-    /* Refresh Button */
-    .refreshButton {
-      background-color: #ffd700; /* Yellow color for Refresh button */
-    }
-
-    .refreshButton:hover {
-      background-color: #f0c000; /* Darker yellow for hover */
-    }
-
-    /* Blank Button */
-    .blankButton {
-      background-color: #ffd700; /* Yellow color for Blank button */
-    }
-
-    .blankButton:hover {
-      background-color: #f0c000; /* Darker yellow for hover */
+      padding: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     }
 
     /* Media Queries */
-    @media (max-width: 1024px) {
-      iframe {
-        width: 80vw;
-        height: calc(75vh - 70px);
-      }
-    }
-
     @media (max-width: 768px) {
       h1 {
         font-size: 1.5rem;
-        right: 10px; /* Adjust position for smaller screens */
+      }
+
+      #description {
+        width: 80%;
       }
 
       #iframe-container {
-        left: 5px;
-        right: 5px;
+        right: 20%; /* Adjust for smaller screens */
       }
 
-      iframe {
-        width: 90vw;
-        height: calc(70vh - 70px);
-      }
-
-      .button-container {
-        top: calc(120px + 70px); /* Adjust position for smaller screens */
-        right: 10px; /* Align to the right */
-        flex-direction: row; /* Align buttons horizontally */
-      }
-
-      button {
-        font-size: 16px;
-        padding: 5px 10px;
+      .ad-container {
+        width: 40%;
       }
     }
 
     @media (max-width: 480px) {
-      .button-container {
-        bottom: 5px;
-        width: auto; /* Adjust width */
-        right: 5px; /* Align to the right */
-        left: auto; /* Remove left alignment */
-        transform: none; /* Remove centering */
-        flex-direction: row; /* Align buttons horizontally */
-        overflow-x: auto; /* Allow horizontal scrolling if needed */
+      h1 {
+        font-size: 1.2rem;
       }
 
-      button {
-        font-size: 14px;
-        padding: 4px 8px;
+      #description {
+        width: 90%;
       }
-    }
 
-    /* Existing styles... */
+      #iframe-container {
+        right: 10%;
+      }
 
-    #description {
-      font-size: 1rem;
-      color: #fff;
-      text-align: center;
-      margin-top: 10px;
-      margin-bottom: 20px;
-      padding: 10px;
-      background-color: rgba(0, 0, 0, 0.7);
-      border-radius: 8px;
+      .ad-container {
+        width: 50%;
+      }
     }
   </style>
-    /* Other existing styles... */
 </head>
 <body>
   <nav>
@@ -366,10 +217,11 @@
 
   <div id="iframe-container"></div>
 
-  <!-- AdForGames.com code begin -->
-  <script>var afg={};afg.u=6289;afg.s=31; afg.anchor="bottom"; document.write("<sc"+"ript src='//js.adforgames.com/cd.js'></sc"+"ript>");</script>
-  <!-- AdForGames.com code end -->
-  
+  <div class="ad-container">
+    <!-- Placeholder for Ads -->
+    <p>Ads will be displayed here.</p>
+  </div>
+
   <div class="button-container">
     <button class="playNowButton" onclick="toggleFullscreen()">
       <img src="https://cdn0.iconfinder.com/data/icons/audio-and-video-outline-1/24/audio_-31-512.png" alt="Fullscreen Icon">
@@ -394,10 +246,10 @@
 
       const iframe = document.createElement('iframe');
       iframe.setAttribute('src', iframeSrc);
-      iframe.setAttribute('id', 'gameIframe'); // Set an ID for easier reference
+      iframe.setAttribute('id', 'gameIframe');
 
       const container = document.getElementById('iframe-container');
-      container.innerHTML = ''; // Clear existing content
+      container.innerHTML = '';
       container.appendChild(iframe);
 
       document.getElementById('gameTitle').textContent = title;
