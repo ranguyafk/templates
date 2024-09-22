@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="DuckHTML Unblocked Games, Free to play">
-  <title>DuckHTML - Blog</title>
+  <title id="pageTitle">DuckHTML - Blog</title>
   <link rel="icon" type="image/x-icon" href="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
@@ -78,11 +78,11 @@
       font-size: 1rem;
       color: #fff;
       text-align: left;
-      margin: 20px 10px; /* Left-aligned */
+      margin: 20px 10px;
       padding: 10px;
       background-color: rgba(0, 0, 0, 0.7);
       border-radius: 8px;
-      width: 40%; /* Adjust width */
+      width: 75%; /* Adjusted width */
       position: absolute;
       top: 120px; /* Space from top */
       left: 10px; /* Move to left */
@@ -93,9 +93,12 @@
       padding: 15px;
       margin: 20px 10px;
       border-radius: 8px;
-      width: calc(100% - 40px); /* Expand to reach the end */
-      position: relative;
+      width: 75%; /* Shortened width */
+      position: absolute;
+      top: 200px; /* Positioned below description */
       left: 10px; /* Align with description */
+      bottom: 10px; /* Extend to the bottom */
+      overflow-y: auto; /* Allow scrolling if content is too long */
     }
 
     .blog-post h2 {
@@ -108,21 +111,6 @@
       margin: 10px 0;
     }
 
-    .ad-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      top: 120px; /* Start below title */
-      right: 10px; /* Right side for ads */
-      width: 30%; /* Adjust width for ads */
-      height: auto;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      padding: 10px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    }
-
     /* Media Queries */
     @media (max-width: 768px) {
       h1 {
@@ -131,10 +119,6 @@
 
       #description, .blog-post {
         width: 80%;
-      }
-
-      .ad-container {
-        width: 40%;
       }
     }
 
@@ -145,10 +129,6 @@
 
       #description, .blog-post {
         width: 90%;
-      }
-
-      .ad-container {
-        width: 50%;
       }
     }
   </style>
@@ -167,16 +147,14 @@
     </div>
   </nav>
 
-  <h1>Welcome to DuckHTML Blog</h1>
+  <h1 id="gameTitle">Blog Title Here</h1>
   
-  <div id="description">Here you can find the latest updates, reviews, and articles about your favorite games!</div>
+  <div id="description">Description here.</div>
 
   <div class="blog-post">
     <h2>Blog Post Title 1</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum massa non venenatis luctus. Phasellus imperdiet risus et nunc posuere, at vehicula ligula placerat. Cras sed vestibulum libero. Sed dignissim felis vel velit ullamcorper, at iaculis justo consequat. Suspendisse potenti. Etiam nec urna justo. Proin suscipit turpis a diam accumsan, nec finibus elit hendrerit. Vivamus blandit metus ut orci tristique, a pellentesque risus facilisis. Integer nec urna eget ex tincidunt elementum ac ut quam.</p>
   </div>
-
-  <div class="ad-container"></div>
 
   <script>
     function checkQueryParam(param) {
@@ -199,6 +177,7 @@
       document.getElementById('gameTitle').textContent = title;
       document.getElementById('description').textContent = description || 'No description available.';
       document.title = title;
+      document.getElementById('pageTitle').textContent = title; // Update page title
     }
 
     window.onload = function () {
@@ -209,6 +188,7 @@
         createGameIframe(gameParamValue, titleParamValue || 'GAMENAMEHERE', descriptionParamValue);
       } else {
         document.getElementById('gameTitle').textContent = 'No game specified';
+        document.getElementById('description').textContent = 'No description available.';
       }
     };
 
