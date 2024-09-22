@@ -74,20 +74,6 @@
       font-family: 'Press Start 2P', sans-serif;
     }
 
-    #description {
-      font-size: 1rem;
-      color: #fff;
-      text-align: left;
-      margin: 20px 10px;
-      padding: 10px;
-      background-color: rgba(0, 0, 0, 0.7);
-      border-radius: 8px;
-      width: 75%; /* Adjusted width */
-      position: absolute;
-      top: 120px; /* Space from top */
-      left: 10px; /* Move to left */
-    }
-
     .blog-post {
       background-color: rgba(0, 0, 0, 0.7);
       padding: 15px;
@@ -102,7 +88,7 @@
     }
 
     .blog-post h2 {
-      font-size: 1.5rem;
+      font-size: 2rem; /* Increased size for blog post title */
       margin: 0;
     }
 
@@ -117,7 +103,7 @@
         font-size: 1.5rem;
       }
 
-      #description, .blog-post {
+      .blog-post {
         width: 80%;
       }
     }
@@ -127,7 +113,7 @@
         font-size: 1.2rem;
       }
 
-      #description, .blog-post {
+      .blog-post {
         width: 90%;
       }
     }
@@ -149,10 +135,8 @@
 
   <h1 id="gameTitle">Blog Title Here</h1>
   
-  <div id="description">Description here.</div>
-
   <div class="blog-post">
-    <h2>Blog Post Title 1</h2>
+    <h2 id="postTitle">Blog Post Title 1</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum massa non venenatis luctus. Phasellus imperdiet risus et nunc posuere, at vehicula ligula placerat. Cras sed vestibulum libero. Sed dignissim felis vel velit ullamcorper, at iaculis justo consequat. Suspendisse potenti. Etiam nec urna justo. Proin suscipit turpis a diam accumsan, nec finibus elit hendrerit. Vivamus blandit metus ut orci tristique, a pellentesque risus facilisis. Integer nec urna eget ex tincidunt elementum ac ut quam.</p>
   </div>
 
@@ -162,61 +146,18 @@
       return urlParams.has(param);
     }
 
-    function createGameIframe(param, title, description) {
-      const hostUrl = window.location.origin;
-      const iframeSrc = `${hostUrl}/gf/${param}`;
-
-      const iframe = document.createElement('iframe');
-      iframe.setAttribute('src', iframeSrc);
-      iframe.setAttribute('id', 'gameIframe');
-
-      const container = document.getElementById('iframe-container');
-      container.innerHTML = '';
-      container.appendChild(iframe);
-
-      document.getElementById('gameTitle').textContent = title;
-      document.getElementById('description').textContent = description || 'No description available.';
-      document.title = title;
-      document.getElementById('pageTitle').textContent = title; // Update page title
-    }
-
     window.onload = function () {
       if (checkQueryParam('game')) {
-        const gameParamValue = new URLSearchParams(window.location.search).get('game');
         const titleParamValue = new URLSearchParams(window.location.search).get('title');
-        const descriptionParamValue = new URLSearchParams(window.location.search).get('description');
-        createGameIframe(gameParamValue, titleParamValue || 'GAMENAMEHERE', descriptionParamValue);
+        document.getElementById('gameTitle').textContent = titleParamValue || 'No title specified';
+        document.getElementById('postTitle').textContent = titleParamValue || 'Blog Post Title 1';
+        document.getElementById('pageTitle').textContent = titleParamValue || 'DuckHTML - Blog';
       } else {
         document.getElementById('gameTitle').textContent = 'No game specified';
-        document.getElementById('description').textContent = 'No description available.';
+        document.getElementById('postTitle').textContent = 'Blog Post Title 1';
+        document.getElementById('pageTitle').textContent = 'DuckHTML - Blog';
       }
     };
-
-    function toggleFullscreen() {
-      const iframe = document.getElementById('gameIframe');
-      if (iframe) {
-        if (document.fullscreenElement) {
-          document.exitFullscreen();
-        } else {
-          iframe.requestFullscreen();
-        }
-      }
-    }
-
-    function refreshIframe() {
-      const iframe = document.getElementById('gameIframe');
-      if (iframe) {
-        iframe.contentWindow.location.reload();
-      }
-    }
-
-    function openInBlank() {
-      const iframe = document.getElementById('gameIframe');
-      if (iframe) {
-        const url = iframe.src;
-        window.open('about:blank').document.write(`<iframe src="${url}" style="border:none;width:100%;height:100vh;"></iframe>`);
-      }
-    }
   </script>
 </body>
 </html>
