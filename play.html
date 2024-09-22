@@ -81,8 +81,8 @@
       border-radius: 8px;
       width: 75%; /* Shortened width */
       position: absolute;
-      top: 200px; /* Positioned below description */
-      left: 10px; /* Align with description */
+      top: 200px; /* Positioned below title */
+      left: 10px; /* Align with title */
       bottom: 10px; /* Extend to the bottom */
       overflow-y: auto; /* Allow scrolling if content is too long */
     }
@@ -93,8 +93,16 @@
     }
 
     .blog-post p {
-      font-size: 1rem;
+      font-size: 1.5rem; /* Significantly larger description */
       margin: 10px 0;
+      line-height: 1.5; /* Improved readability */
+    }
+
+    .ad-space {
+      height: 90px; /* Space for ads */
+      background-color: #333; /* Placeholder color */
+      margin: 20px 0; /* Pocket between text */
+      border-radius: 8px;
     }
 
     /* Media Queries */
@@ -137,7 +145,19 @@
   
   <div class="blog-post">
     <h2 id="postTitle">Blog Post Title 1</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum massa non venenatis luctus. Phasellus imperdiet risus et nunc posuere, at vehicula ligula placerat. Cras sed vestibulum libero. Sed dignissim felis vel velit ullamcorper, at iaculis justo consequat. Suspendisse potenti. Etiam nec urna justo. Proin suscipit turpis a diam accumsan, nec finibus elit hendrerit. Vivamus blandit metus ut orci tristique, a pellentesque risus facilisis. Integer nec urna eget ex tincidunt elementum ac ut quam.</p>
+    <p id="postDescription">Default description text for the blog post. This can be replaced with URL parameters.</p>
+    
+    <div class="ad-space"></div> <!-- Ad space -->
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum massa non venenatis luctus. Phasellus imperdiet risus et nunc posuere, at vehicula ligula placerat.</p>
+    
+    <div class="ad-space"></div> <!-- Ad space -->
+
+    <p>Cras sed vestibulum libero. Sed dignissim felis vel velit ullamcorper, at iaculis justo consequat. Suspendisse potenti.</p>
+
+    <div class="ad-space"></div> <!-- Ad space -->
+
+    <p>Etiam nec urna justo. Proin suscipit turpis a diam accumsan, nec finibus elit hendrerit. Vivamus blandit metus ut orci tristique.</p>
   </div>
 
   <script>
@@ -147,16 +167,13 @@
     }
 
     window.onload = function () {
-      if (checkQueryParam('game')) {
-        const titleParamValue = new URLSearchParams(window.location.search).get('title');
-        document.getElementById('gameTitle').textContent = titleParamValue || 'No title specified';
-        document.getElementById('postTitle').textContent = titleParamValue || 'Blog Post Title 1';
-        document.getElementById('pageTitle').textContent = titleParamValue || 'DuckHTML - Blog';
-      } else {
-        document.getElementById('gameTitle').textContent = 'No game specified';
-        document.getElementById('postTitle').textContent = 'Blog Post Title 1';
-        document.getElementById('pageTitle').textContent = 'DuckHTML - Blog';
-      }
+      const titleParamValue = new URLSearchParams(window.location.search).get('title');
+      const descriptionParamValue = new URLSearchParams(window.location.search).get('description');
+
+      document.getElementById('gameTitle').textContent = titleParamValue || 'No title specified';
+      document.getElementById('postTitle').textContent = titleParamValue || 'Blog Post Title 1';
+      document.getElementById('postDescription').textContent = descriptionParamValue || 'Default description text for the blog post.';
+      document.getElementById('pageTitle').textContent = titleParamValue || 'DuckHTML - Blog';
     };
   </script>
 </body>
